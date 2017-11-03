@@ -13,11 +13,18 @@ import { SearchComponent } from './search/search.component';
 import { PaginatorComponent } from './search/paginator/paginator.component';
 import { SearchBarComponent } from './search/search-bar/search-bar.component';
 import { SearchResultComponent } from './search/search-result/search-result.component';
+import { BrowseComponent } from './browse/browse.component';
+import { QuickFindComponent } from './browse/quick-find/quick-find.component';
+import { ArtistComponent } from './artist/artist.component';
+import { ArtistListComponent } from './artist/artist-list/artist-list.component';
+import { TopArtistComponent } from './artist/top-artist/top-artist.component';
 
 const routes: Routes = [  
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'browse', component: BrowseComponent },
+  { path: 'artist', component: ArtistComponent },
   
 ];
 
@@ -39,7 +46,12 @@ const routes: Routes = [
     SearchComponent,
     PaginatorComponent,
     SearchBarComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    BrowseComponent,
+    QuickFindComponent,
+    ArtistComponent,
+    ArtistListComponent,
+    TopArtistComponent
   ],
   imports: [
     BrowserModule,
