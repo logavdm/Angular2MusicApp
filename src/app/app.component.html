@@ -1,20 +1,103 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=">
+<div class="app dk" id="app">
+   <!-- ############ LAYOUT START-->
+   <!-- aside -->
+   <div id="aside" class="app-aside modal fade nav-dropdown folded">
+      <!-- fluid app aside -->
+      <div class="left navside black dk" data-layout="column">
+         <div class="navbar no-radius">
+            <!-- brand -->
+            <a href="/search" class="navbar-brand md">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="32" height="32">
+                  <circle cx="24" cy="24" r="24" fill="rgba(255,255,255,0.2)"/>
+                  <circle cx="24" cy="24" r="22" fill="#1c202b" class="brand-color"/>
+                  <circle cx="24" cy="24" r="10" fill="#ffffff"/>
+                  <circle cx="13" cy="13" r="2"  fill="#ffffff" class="brand-animate"/>
+                  <path d="M 14 24 L 24 24 L 14 44 Z" fill="#FFFFFF" />
+                  <circle cx="24" cy="24" r="3" fill="#000000"/>
+               </svg>
+               <img src="assets/images/logo.png" alt="." class="hide">
+               <span class="hidden-folded inline">pulse</span>
+            </a>
+            <!-- / brand -->
+         </div>
+         <div data-flex class="hide-scroll">
+            <nav class="scroll nav-stacked nav-active-primary">
+               <ul class="nav" data-ui-nav>
+                  <li class="nav-header hidden-folded">
+                     <span class="text-xs text-muted">Main</span>
+                  </li>
+                  <li>
+                     <a href="player.html">
+                     <span class="nav-icon">
+                     <i class="material-icons">
+                     play_circle_outline
+                     </i>
+                     </span>
+                     <span class="nav-text">Discover</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="browse.html">
+                     <span class="nav-icon">
+                     <i class="material-icons">
+                     sort
+                     </i>
+                     </span>
+                     <span class="nav-text">Browse</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="chart.html">
+                     <span class="nav-icon">
+                     <i class="material-icons">
+                     trending_up
+                     </i>
+                     </span>
+                     <span class="nav-text">Charts</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="artist.html">
+                     <span class="nav-icon">
+                     <i class="material-icons">
+                     portrait
+                     </i>
+                     </span>
+                     <span class="nav-text">Artist</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a data-toggle="modal" data-target="#search-modal">
+                     <span class="nav-icon">
+                     <i class="material-icons">
+                     search
+                     </i>
+                     </span>
+                     <span class="nav-text">Search</span>
+                     </a>
+                  </li>
+               </ul>
+            </nav>
+         </div>
+      </div>
+   </div>
+   <!-- / -->
+   <!-- content -->
+   <div id="content" class="app-content white bg box-shadow-z2" role="main">
+      <div class="app-header blue lt box-shadow-z1">
+         <app-topmenu></app-topmenu>
+      </div>
+      <app-player></app-player>
+      <div class="app-body" id="view">
+         <!-- ############ PAGE START-->
+         <div class="page-content">
+          
+           <router-outlet></router-outlet>
+            
+         </div>
+         <!-- ############ PAGE END-->
+      </div>
+   </div>
+   <!-- / -->
+   <!-- ############ LAYOUT END-->
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://blog.angular.io//">Angular blog</a></h2>
-  </li>
-</ul>
-
