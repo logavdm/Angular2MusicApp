@@ -20,11 +20,11 @@ import { ArtistListComponent } from './artist/artist-list/artist-list.component'
 import { TopArtistComponent } from './artist/top-artist/top-artist.component';
 
 const routes: Routes = [  
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
-  { path: 'home', component: HomeComponent },
+  { path: '', component:HomeComponent },
   { path: 'search', component: SearchComponent },
   { path: 'browse', component: BrowseComponent },
   { path: 'artist', component: ArtistComponent },
+  { path: '**', component: HomeComponent },
   
 ];
 

@@ -1,7 +1,7 @@
 <div class="app dk" id="app">
    <!-- ############ LAYOUT START-->
    <!-- aside -->
-   <div id="aside" class="app-aside modal fade nav-dropdown folded">
+   <div id="aside" [ngClass]="folded?'app-aside modal fade nav-dropdown':'app-aside modal fade nav-dropdown folded'" >
       <!-- fluid app aside -->
       <div class="left navside blue dk" data-layout="column">
          <div class="navbar no-radius">
