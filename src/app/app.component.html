@@ -1,7 +1,7 @@
 <div class="app dk" id="app">
    <!-- ############ LAYOUT START-->
    <!-- aside -->
-   <div id="aside" [ngClass]="folded?'app-aside modal fade nav-dropdown':'app-aside modal fade nav-dropdown folded'" >
+   <div id="aside" [ngClass]="{'app-aside':true,'modal':true,'fade':true,'nav-dropdown':true,'folded':toggle}"  >
       <!-- fluid app aside -->
       <div class="left navside blue dk" data-layout="column">
          <div class="navbar no-radius">
@@ -91,7 +91,7 @@
       <div class="app-body" id="view">
          <!-- ############ PAGE START-->
          <div class="page-content">
-          
+            
            <router-outlet></router-outlet>
             
          </div>

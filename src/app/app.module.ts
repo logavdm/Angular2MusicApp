@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { NgReduxModule }  from '@angular-redux/store';
 import { NgModule } from '@angular/core';
+import { ResponsiveModule } from 'ng2-responsive'
 import { Routes, RouterModule } from '@angular/router'; 
 
 import { AppComponent } from './app.component';
@@ -55,6 +57,8 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    NgReduxModule,
+    ResponsiveModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
