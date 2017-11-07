@@ -1,0 +1,57 @@
+---
+layout: layout.html
+styles: 
+- css/bootstrap-rtl/dist/bootstrap-rtl.css
+- css/styles/app.rtl.css
+- libs/mediaelement/build/mep.rtl.css
+scripts:
+- scripts/rtl.js
+---
+<div class="page-content">
+
+	<div class="padding">
+		<div class="page-title m-b">
+			<h1 class="inline m-a-0">Discover</h1>
+		</div>
+		<div class="item-info-overlay">
+		    <div class="owl-carousel owl-theme owl-dots-center" data-ui-jp="owlCarousel" data-ui-options="{
+					margin: 20,
+					rtl: true
+				}">
+				{{>items count="6"}}
+			</div>
+		</div>
+	</div>
+	
+	<div class="row-col">
+		<div class="col-lg-9 b-r no-border-md">
+			<div class="padding">
+				<h2 class="widget-title h4 m-b">Treading</h2>
+				<div class="owl-carousel owl-theme owl-dots-center" data-ui-jp="owlCarousel" data-ui-options="{
+					margin: 20,
+					rtl: true,
+					responsiveClass:true,
+				    responsive:{
+				    	0:{
+				    		items: 2
+				    	},
+				        543:{
+				            items: 3
+				        }
+				    }
+				}">
+					{{>items count="8"}}
+				</div>
+				<h2 class="widget-title h4 m-b">New</h2>
+				<div class="row">
+					{{>items col="col-xs-4 col-sm-4 col-md-3" count="8"}}
+				</div>
+				<h2 class="widget-title h4 m-b">Recommand for you</h2>
+				<div class="row item-list item-list-md m-b">
+					{{>items col="col-sm-6" count="10"}}
+				</div>
+			</div>
+		</div>
+		{{>sidebar}}
+	</div>
+</div>

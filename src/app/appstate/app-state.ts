@@ -1,6 +1,7 @@
+import {DeviceInformation} from './models/device-information';
 export interface AppState {
 
-	isMobile:boolean;
 	sideMenuToggle:boolean;
+	deviceInfo:DeviceInformation;
 
 }

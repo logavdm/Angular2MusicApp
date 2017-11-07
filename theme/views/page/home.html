@@ -1,0 +1,45 @@
+---
+layout: layout.h.html
+---
+<div class="page-content">
+
+  <div class="black dk">
+    <div class="row no-gutter item-info-overlay">
+      <div class="col-sm-6 text-white">
+        {{>slider}}
+      </div>
+      {{>items count="4" col="col-sm-3 col-xs-6" random="false"}}
+    </div>
+  </div>
+  
+  <div class="row-col">
+    <div class="col-lg-9 b-r no-border-md">
+      <div class="padding">
+        <h2 class="widget-title h4 m-b">Treading</h2>
+        <div class="owl-carousel owl-theme owl-dots-center" data-ui-jp="owlCarousel" data-ui-options="{
+          margin: 20,
+          responsiveClass:true,
+          responsive:{
+            0:{
+              items: 2
+            },
+              543:{
+                  items: 3
+              }
+          }
+        }">
+          {{>items count="8" mediaSize="item-media-4by3"}}
+        </div>
+        <h2 class="widget-title h4 m-b">New</h2>
+        <div class="row">
+          {{>items col="col-xs-4 col-sm-4 col-md-3" count="8"}}
+        </div>
+        <h2 class="widget-title h4 m-b">Recommand for you</h2>
+        <div class="row item-list item-list-md m-b">
+          {{>items col="col-sm-6" count="10"}}
+        </div>
+      </div>
+    </div>
+    {{>sidebar}}
+  </div>
+</div>

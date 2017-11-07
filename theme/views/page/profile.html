@@ -1,0 +1,115 @@
+<div class="page-bg" data-stellar-ratio="2" style="background-image: url('images/a3.jpg');"></div>
+<div class="page-content">
+  <div class="padding b-b">
+    <div class="row-col">
+        <div class="col-sm w w-auto-xs m-b">
+          <div class="item w rounded">
+            <div class="item-media">
+              <div class="item-media-content" style="background-image: url('images/a3.jpg');"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="p-l-md no-padding-xs">
+            <h1 class="page-title">
+              <span class="h1 _800">Rachel Platten</span>
+            </h1>
+            <p class="item-desc text-ellipsis text-muted" data-ui-toggle-class="text-ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quamquam tu hanc copiosiorem etiam soles dicere. Nihil illinc huc pervenit. Verum hoc idem saepe faciamus. Quid ad utilitatem tantae pecuniae? Utram tandem linguam nescio? Sed hoc sane concedamus.</p>
+            <div class="item-action m-b">
+              <a href="#" class="btn btn-sm rounded primary">Upload</a>
+              <a href="#" class="btn btn-sm rounded white">Edit Profile</a>
+            </div>
+            <div class="block clearfix m-b">
+              <span>9</span> <span class="text-muted">Albums</span>, <span>23</span> <span class="text-muted">Tracks</span>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="row-col">
+    <div class="col-lg-9 b-r no-border-md">
+      <div class="padding p-y-0 m-b-md">
+        <div class="nav-active-border b-primary bottom m-b-md m-t">
+          <ul class="nav l-h-2x" data-ui-jp="taburl">
+            <li class="nav-item m-r inline">
+              <a class="nav-link active" href="#" data-toggle="tab" data-target="#track">Tracks</a>
+            </li>
+            <li class="nav-item m-r inline">
+              <a class="nav-link" href="#" data-toggle="tab" data-target="#playlist">Playlists</a>
+            </li>
+            <li class="nav-item m-r inline">
+              <a class="nav-link" href="#" data-toggle="tab" data-target="#like">Likes</a>
+            </li>
+            <li class="nav-item m-r inline">
+              <a class="nav-link" href="#" data-toggle="tab" data-target="#profile">Profile</a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content">
+          <div class="tab-pane active" id="track">
+            <div class="row item-list item-list-by m-b">
+              {{>items col="col-xs-12" count="12" author="false" except="true" action="true" meta="true" meta-category="true" meta-date="true"}}
+            </div>
+            <a href="#" class="btn btn-sm white rounded">Show More</a>
+          </div>
+          <div class="tab-pane" id="playlist">
+            <div class="row m-b">
+              {{>items col="col-xs-4 col-sm-4 col-md-3" count="3" author="false" meta="true" meta-stats="true"}}
+            </div>
+          </div>
+          <div class="tab-pane" id="like">
+            <div class="row m-b">
+              {{>items col="col-xs-4 col-sm-4 col-md-3" count="2" author="false" meta="true" meta-stats="true"}}
+            </div>
+          </div>
+          <div class="tab-pane" id="profile">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-3 form-control-label text-muted">Location</div>
+                <div class="col-sm-9"><input value="Earth" class="form-control"></div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-3 form-control-label text-muted">Website</div>
+                <div class="col-sm-9"><input placeholder="http://" class="form-control"></div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-3 form-control-label text-muted">Music Type</div>
+                <div class="col-sm-9">
+                  <select class="form-control c-select">
+                    <option>Blue</option>
+                    <option>Electro</option>
+                    <option>Pop</option>
+                    <option>Soul</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{>sidebar}}
+  </div>
+</div>
+
+<!-- .modal -->
+<div id="delete-modal" class="modal fade animate black-overlay" data-backdrop="false">
+  <div class="row-col h-v">
+    <div class="row-cell v-m">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content flip-y">
+          <div class="modal-body text-center">          
+            <p class="p-y m-t"><i class="fa fa-remove text-warning fa-3x"></i></p>
+            <p>Are you sure to delete this item?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default p-x-md" data-dismiss="modal">No</button>
+            <button type="button" class="btn red p-x-md" data-dismiss="modal">Yes</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- / .modal -->

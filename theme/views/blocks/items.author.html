@@ -1,0 +1,17 @@
+{{#eachIndex (shuffle authors) }}
+	{{#lt index ../count}}
+    <div class="{{../../col}}">
+    	<div class="item">
+			<div class="item-media rounded {{../../mediaSize}}">
+				<a href="artist.detail.html" class="item-media-content" style="background-image: url('{{item.thumb.src}}');"></a>
+			</div>
+			<div class="item-info {{../../item-info-class}}">
+				<div class="item-title text-ellipsis">
+					<a href="artist.detail.html">{{item.title}}</a>
+					<div class="text-sm text-muted">{{item.tracks}} songs</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{/lt}}
+{{/eachIndex}}

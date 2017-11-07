@@ -1,0 +1,29 @@
+---
+layout: layout.c.html
+---
+        
+        <div class="page-title m-b">
+          <h1 class="inline m-a-0">Artists</h1>
+          <div class="dropdown inline">
+            <button class="btn btn-sm no-bg h4 m-y-0 v-b dropdown-toggle text-primary" data-toggle="dropdown">By name</button>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item active">
+                By name
+              </a>
+              <a href="#" class="dropdown-item">
+                Songs
+              </a>
+            </div>
+          </div>
+        </div>
+        <div data-ui-jp="jscroll" data-ui-options="{
+            autoTrigger: false,
+            loadingHtml: '<i class=\'fa fa-refresh fa-spin text-md text-muted\'></i>',
+            padding: 50,
+            nextSelector: 'a.jscroll-next:last'
+          }">
+          <div class="row row-lg">
+            {{>items.author col="col-xs-4 col-sm-4 col-md-3" count="12" item-info-class="text-center"}}
+          </div>
+          <a href="scroll.author.html" class="btn btn-sm white rounded jscroll-next">Show More</a>
+        </div>

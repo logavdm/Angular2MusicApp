@@ -1,0 +1,108 @@
+<div class="pos-rlt">
+  <div class="page-bg" data-stellar-ratio="2" style="background-image: url('images/b5.jpg');"></div>
+</div>
+<div class="page-content">
+  <div class="padding b-b">
+    <div class="row-col">
+        <div class="col-sm w w-auto-xs m-b">
+          <div class="item w rounded">
+            <div class="item-media">
+              <div class="item-media-content" style="background-image: url('images/b5.jpg');"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="p-l-md no-padding-xs">
+            <div class="page-title">
+              <h1 class="inline">Rachel Platten</h1>
+              <label class="fa fa-star text-primary text-lg m-b v-m m-l-xs" title="Pro"></label>
+            </div>
+            <p class="item-desc text-ellipsis text-muted" data-ui-toggle-class="text-ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quamquam tu hanc copiosiorem etiam soles dicere. Nihil illinc huc pervenit. Verum hoc idem saepe faciamus. Quid ad utilitatem tantae pecuniae? Utram tandem linguam nescio? Sed hoc sane concedamus.</p>
+            <div class="item-action m-b">
+              <a class="btn btn-icon white rounded btn-share pull-right" data-toggle="modal" data-target="#share-modal"><i class="fa fa-share-alt"></i></a>
+              <button class="btn-playpause text-primary m-r-sm"></button> 
+              <span>9 Albums, 105 Tracks</span>
+            </div>
+            <div class="block clearfix m-b">
+              <a class="btn btn-xs rounded white">Soul</a> <a class="btn btn-xs rounded white">Electro</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="row-col">
+    <div class="col-lg-9 b-r no-border-md">
+      <div class="padding">
+        <div class="nav-active-border b-primary bottom m-b-md">
+          <ul class="nav l-h-2x">
+            <li class="nav-item m-r inline">
+              <a class="nav-link active" href="#" data-toggle="tab" data-target="#tab_1">Overview</a>
+            </li>
+            <li class="nav-item m-r inline">
+              <a class="nav-link" href="#" data-toggle="tab" data-target="#tab_2">Tracks</a>
+            </li>
+            <li class="nav-item m-r inline">
+              <a class="nav-link" href="#" data-toggle="tab" data-target="#tab_3">Playlists</a>
+            </li>
+            <li class="nav-item m-r inline">
+              <a class="nav-link" href="#" data-toggle="tab" data-target="#tab_4">Profile</a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content">
+          <div class="tab-pane active" id="tab_1">
+            <h5 class="m-b">Popular</h5>
+            <div class="row item-list item-list-md item-list-li m-b" id="tracks">
+              {{>items col="col-md-12 col-lg-6" count="4" author="false" meta="true" meta-stats="true"}}
+            </div>
+            <h5 class="m-b">Albums</h5>
+            <div class="row m-b">
+              {{>items col="col-xs-4 col-sm-4 col-md-3" count="8" author="false" meta="true" meta-stats="true"}}
+            </div>
+            <a href="#" class="btn btn-sm white rounded">Show More</a>
+          </div>
+          <div class="tab-pane" id="tab_2">
+            <div class="row m-b">
+              {{>items col="col-xs-4 col-sm-4 col-md-3" count="12" author="false" meta="true" meta-stats="true"}}
+            </div>
+            <a href="#" class="btn btn-sm white rounded">Show More</a>
+          </div>
+          <div class="tab-pane" id="tab_3">
+            <div class="row m-b">
+              {{>items col="col-xs-4 col-sm-4 col-md-3" count="2" author="false" meta="true" meta-stats="true"}}
+            </div>
+          </div>
+          <div class="tab-pane" id="tab_4">
+            <div class="row-col m-b">
+              <div class="col-xs w-xs text-muted">Location</div>
+              <div class="col-xs">UK</div>
+            </div>
+            <div class="row-col m-b">
+              <div class="col-xs w-xs text-muted">Website</div>
+              <div class="col-xs"><a href="http://rachel-platten.com">http://rachel-platten.com</a></div>
+            </div>
+            <div class="row-col m-b">
+              <div class="col-xs w-xs text-muted"></div>
+              <div class="col-xs">
+                  <a href="" class="btn btn-icon btn-social rounded white btn-sm">
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-facebook indigo"></i>
+                  </a>
+                  <a href="" class="btn btn-icon btn-social rounded white btn-sm">
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-twitter light-blue"></i>
+                  </a>
+                  <a href="" class="btn btn-icon btn-social rounded white btn-sm">
+                    <i class="fa fa-google-plus"></i>
+                    <i class="fa fa-google-plus red"></i>
+                  </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{>sidebar}}
+  </div>
+</div>

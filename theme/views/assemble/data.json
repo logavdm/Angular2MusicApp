@@ -1,0 +1,298 @@
+{
+    "app":{
+        "name": "pulse"
+    },
+	"items":[
+        {
+            "id": "item-1",
+            "title": "Pull Up",
+            "except": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quamquam tu hanc copiosiorem etiam soles dicere. Nihil illinc huc pervenit.",
+            "link": "track.detail.html",
+            "thumb": { "src": "images/b0.jpg" },
+            "src": "http://api.soundcloud.com/tracks/269944843/stream?client_id=a10d44d431ad52868f1bce6d36f5234c",
+            "meta": {
+                "author": "Summerella",
+                "authorlink": "artist.detail.html",
+                "date": "30.05.2016",
+                "category": "Blue",
+                "tag": "Holiday",
+                "play": 3200,
+                "like": 210,
+                "duration": "2:50"
+            }
+        },
+        {
+            "id": "item-2",
+            "title": "Fireworks",
+            "except": "Hidem saepe faciamus. Quid ad utilitatem tantae pecuniae? Utram tandem linguam nescio? Sed hoc sane concedamus.",
+            "link": "track.detail.html",
+            "thumb": { "src": "images/b1.jpg" },
+            "src": "http://api.soundcloud.com/tracks/259445397/stream?client_id=a10d44d431ad52868f1bce6d36f5234c",
+            "meta": {
+                "author": "Kygo",
+                "authorlink": "artist.detail.html",
+                "date": "02.05.2016",
+                "category": "Jazz",
+                "play": 30,
+                "like": 10,
+                "duration": "4:25"
+            }
+        },
+        {
+            "id": "item-3",
+            "title": "I Wanna Be In the Cavalry",
+            "except": "Tantae pecuniae? Utram tandem linguam nescio? Sed hoc sane concedamus.",
+            "link": "track.detail.html",
+            "thumb": { "src": "images/b2.jpg" },
+            "src": "http://api.soundcloud.com/tracks/79031167/stream?client_id=a10d44d431ad52868f1bce6d36f5234c",
+            "meta": {
+                "author": "Jeremy Scott",
+                "authorlink": "artist.detail.html",
+                "date": "09.04.2016",
+                "category": "DJ",
+                "play": 300,
+                "like": 10,
+                "duration": "2:50"
+            }
+        },
+        {
+            "id": "item-4",
+            "title": "What A Time To Be Alive",
+            "except": "Verum hoc idem saepe faciamus inguam nescio? Sed hoc sane concedamus.",
+            "link": "track.detail.html",
+            "thumb": { "src": "images/b3.jpg" },
+            "src": "http://api.soundcloud.com/tracks/230791292/stream?client_id=a10d44d431ad52868f1bce6d36f5234c",
+            "meta": {
+                "author": "Judith Garcia",
+                "authorlink": "artist.detail.html",
+                "date": "04.05.2016",
+                "category": "Electro",
+                "play": 320,
+                "like": 20,
+                "duration": "6:00"
+            }
+        },
+        {
+            "id": "item-5",
+            "title": "Live Radio",
+            "except": "Verum hoc idem saepe faciamus. Quid ad utilitatem tantae pecuniae? Utram tandem linguam nescio? Sed hoc sane concedamus.",
+            "link": "track.detail.html",
+            "thumb": { "src": "images/b4.jpg" },
+            "src": "http://streaming.radionomy.com/JamendoLounge",
+            "meta": {
+                "author": "Radionomy",
+                "authorlink": "artist.detail.html",
+                "date": "09.05.2016",
+                "category": "Electro",
+                "play": 3340,
+                "like": 100,
+                "duration": "3:35"
+            }
+        },
+        {
+            "id": "item-6",
+            "title": "Body on me",
+            "except": "Tantae pecuniae? Utram tandem linguam nescio? Sed hoc sane concedamus.",
+            "link": "track.detail.html",
+            "thumb": { "src": "images/b5.jpg" },
+            "src": "http://api.soundcloud.com/tracks/236107824/stream?client_id=a10d44d431ad52868f1bce6d36f5234c",
+            "meta": {
+                "author": "Rita Ora",
+                "authorlink": "artist.detail.html",
+                "date": "09.04.2016",
+                "category": "Nature",
+                "play": 330,
+                "like": 220,
+                "duration": "3:55"
+            }
+        },
+        {
+            "id": "item-7",
+            "title": "Reflection (Deluxe)",
+            "except": "Quid ad utilitatem tantae pecuniae? Utram tandem linguam nescio? Sed hoc sane concedamus.",
+            "link": "track.detail.html",
+            "thumb": { "src": "images/b6.jpg" },
+            "src": "http://api.soundcloud.com/tracks/245566366/stream?client_id=a10d44d431ad52868f1bce6d36f5234c",
+            "meta": {
+                "author": "Fifth Harmony",
+                "authorlink": "artist.detail.html",
+                "date": "05.05.2016",
+                "category": "Pop",
+                "play": 200,
+                "like": 510,
+                "duration": "5:05"
+            }
+        },
+        {
+            "id": "item-8",
+            "title": "Simple Place To Be",
+            "except": "Ad utilitatem tantae pecuniae? Utram tandem linguam nescio? Sed hoc sane concedamus.",
+            "link": "track.detail.html",
+            "thumb": { "src": "images/b7.jpg" },
+            "src": "http://api.soundcloud.com/tracks/236288744/stream?client_id=a10d44d431ad52868f1bce6d36f5234c",
+            "meta": {
+                "author": "RYD",
+                "authorlink": "artist.detail.html",
+                "date": "09.04.2016",
+                "category": "Radio",
+                "play": 400,
+                "like": 220,
+                "duration": "4:20"
+            }
+        },
+        {
+            "id": "item-9",
+            "title": "All I Need",
+            "except": "Tandem linguam nescio? Sed hoc sane concedamus.",
+            "link": "track.detail.html",
+            "thumb": { "src": "images/b8.jpg" },
+            "src": "http://api.soundcloud.com/tracks/264094434/stream?client_id=a10d44d431ad52868f1bce6d36f5234c",
+            "meta": {
+                "author": "Pablo Nouvelle",
+                "authorlink": "artist.detail.html",
+                "date": "02.04.2016",
+                "category": "Jazz",
+                "play": 4500,
+                "like": 2310,
+                "duration": "3:10"
+            }
+        },
+        {
+            "id": "item-10",
+            "title": "The Open Road",
+            "except": "Litatem tantae pecuniae? Utram tandem linguam nescio? Sed hoc sane concedamus.",
+            "link": "track.detail.html",
+            "thumb": { "src": "images/b9.jpg" },
+            "src": "http://api.soundcloud.com/tracks/237514750/stream?client_id=a10d44d431ad52868f1bce6d36f5234c",
+            "meta": {
+                "author": "Postiljonen",
+                "authorlink": "artist.detail.html",
+                "date": "02.04.2016",
+                "category": "Soul",
+                "play": 860,
+                "like": 240,
+                "duration": "5:20"
+            }
+        },
+        {
+            "id": "item-11",
+            "title": "Spring",
+            "except": "Saepe faciamus. Quid ad utilitatem tantae pecuniae? Utram tandem linguam nescio? Sed hoc sane concedamus.",
+            "link": "track.detail.html",
+            "thumb": { "src": "images/b10.jpg" },
+            "src": "http://api.soundcloud.com/tracks/218060449/stream?client_id=a10d44d431ad52868f1bce6d36f5234c",
+            "meta": {
+                "author": "Pablo Nouvelle",
+                "authorlink": "artist.detail.html",
+                "date": "09.03.2016",
+                "category": "Indie",
+                "play": 4500,
+                "like": 2310,
+                "duration": "3:10"
+            }
+        },
+        {
+            "id": "item-12",
+            "title": "Happy ending",
+            "except": "Utilitatem tantae pecuniae? Utram tandem linguam nescio? Sed hoc sane concedamus.",
+            "link": "track.detail.html",
+            "thumb": { "src": "images/b11.jpg" },
+            "src": "http://api.soundcloud.com/tracks/174495152/stream?client_id=a10d44d431ad52868f1bce6d36f5234c",
+            "meta": {
+                "author": "Postiljonen",
+                "authorlink": "artist.detail.html",
+                "date": "09.06.2016",
+                "category": "Latin",
+                "play": 860,
+                "like": 240,
+                "duration": "5:20"
+            }
+        }
+    ],
+    "authors":[
+        {
+            "id": "author-1",
+            "title": "Crystal Guerrero",
+            "link": "item-1.html",
+            "thumb": { "src": "images/a0.jpg" },
+            "tracks" : 12
+        },
+        {
+            "id": "author-2",
+            "title": "James Garcia",
+            "link": "item-1.html",
+            "thumb": { "src": "images/a1.jpg" },
+            "tracks" : 9
+        },
+        {
+            "id": "author-3",
+            "title": "Jean Schneider",
+            "link": "item-1.html",
+            "thumb": { "src": "images/a2.jpg" },
+            "tracks" :8
+        },
+        {
+            "id": "author-4",
+            "title": "Joe Holmes",
+            "link": "item-1.html",
+            "thumb": { "src": "images/a3.jpg" },
+            "tracks" : 24
+        },
+        {
+            "id": "author-5",
+            "title": "Judith Garcia",
+            "link": "item-1.html",
+            "thumb": { "src": "images/a4.jpg" },
+            "tracks" : 13
+        },
+        {
+            "id": "author-1",
+            "title": "Judy Woods",
+            "link": "item-1.html",
+            "thumb": { "src": "images/a5.jpg" },
+            "tracks" : 23
+        },
+        {
+            "id": "author-6",
+            "title": "OlsJesse Russell",
+            "link": "item-1.html",
+            "thumb": { "src": "images/a6.jpg" },
+            "tracks" : 23
+        },
+        {
+            "id": "author-1",
+            "title": "Richard Carr",
+            "link": "item-1.html",
+            "thumb": { "src": "images/a7.jpg" },
+            "tracks" : 6
+        },
+        {
+            "id": "author-7",
+            "title": "Sara King",
+            "link": "item-1.html",
+            "thumb": { "src": "images/a8.jpg" },
+            "tracks" : 14
+        },
+        {
+            "id": "author-8",
+            "title": "Douglas Torres",
+            "link": "item-1.html",
+            "thumb": { "src": "images/a9.jpg" },
+            "tracks" : 20
+        },
+        {
+            "id": "author-9",
+            "title": "Jeremy Scott",
+            "link": "item-1.html",
+            "thumb": { "src": "images/b0.jpg" },
+            "tracks" : 14
+        },
+        {
+            "id": "author-10",
+            "title": "Melissa Garza",
+            "link": "item-1.html",
+            "thumb": { "src": "images/b1.jpg" },
+            "tracks" : 20
+        }
+    ]
+}

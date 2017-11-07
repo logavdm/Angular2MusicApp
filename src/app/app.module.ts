@@ -21,6 +21,13 @@ import { ArtistComponent } from './artist/artist.component';
 import { ArtistListComponent } from './artist/artist-list/artist-list.component';
 import { TopArtistComponent } from './artist/top-artist/top-artist.component';
 
+//logger module
+import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
+
+//environment
+import {environment} from '../environments/environment';
+
+
 const routes: Routes = [  
   { path: '', component:HomeComponent },
   { path: 'search', component: SearchComponent },
@@ -53,13 +60,15 @@ const routes: Routes = [
     QuickFindComponent,
     ArtistComponent,
     ArtistListComponent,
-    TopArtistComponent
+    TopArtistComponent,
+
   ],
   imports: [
     BrowserModule,
     NgReduxModule,
     ResponsiveModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    LoggerModule.forRoot(environment.logger)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,57 @@
+---
+layout: base.html
+---
+  <!-- aside -->
+  <div id="aside" class="app-aside modal fade nav-dropdown">
+    <!-- fluid app aside -->
+    <div class="left navside grey dk" data-layout="column">
+      <div class="navbar no-radius">
+        {{>navbar.brand}}
+      </div>
+      <div data-flex class="hide-scroll">
+          <nav class="scroll nav-stacked nav-active-primary">
+            {{>nav}}
+          </nav>
+      </div>
+      <div data-flex-no-shrink>
+        {{>aside.bottom}}
+      </div>
+    </div>
+  </div>
+  <!-- / -->
+  
+  <!-- content -->
+  <div id="content" class="app-content white bg box-shadow-z2" role="main">
+    <div class="app-header hidden-lg-up white lt box-shadow-z1">
+        <div class="navbar">
+        {{>navbar.brand}}
+        <!-- nabar right -->
+        <ul class="nav navbar-nav pull-right">
+          <li class="nav-item">
+            <!-- Open side - Naviation on mobile -->
+            <a data-toggle="modal" data-target="#aside" class="nav-link">
+              <i class="material-icons">menu</i>
+            </a>
+            <!-- / -->
+          </li>
+        </ul>
+        <!-- / navbar right -->
+      </div>
+    </div>
+    <div class="app-footer app-player grey bg">
+      {{>player}}
+    </div>
+    <div class="app-body" id="view">
+
+<!-- ############ PAGE START-->
+{{> body}}
+<!-- ############ PAGE END-->
+
+    </div>
+  </div>
+  <!-- / -->
+
+  
+  {{>switcher container="false"}}
+  {{>modal.search}}
+  {{>modal.share}}

@@ -1,0 +1,63 @@
+  <div class="navbar" data-pjax>
+        <a data-toggle="collapse" data-target="#navbar" class="navbar-item pull-right hidden-md-up m-r-0 m-l">
+          <i class="material-icons">menu</i>
+        </a>
+        {{>navbar.brand}}
+
+        <!-- nabar right -->
+        <ul class="nav navbar-nav pull-right">
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#search-modal">
+              <i class="material-icons">search</i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">
+              <span class="hidden-xs-down btn btn-sm rounded primary _600">
+                Upload
+              </span>
+              <span class="hidden-sm-up btn btn-sm btn-icon rounded primary">
+                <i class="material-icons">file_upload</i>
+              </span>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link clear" data-toggle="dropdown">
+              <span class="avatar w-32">
+                <img src="images/a3.jpg" alt="...">
+              </span>
+            </a>
+            {{>dropdown.user class="pull-right"}}
+          </li>
+        </ul>
+        <!-- / navbar right -->
+
+        <!-- navbar collapse -->
+        <div class="collapse navbar-toggleable-sm l-h-0 text-center" id="navbar">
+          <!-- link and dropdown -->
+          <ul class="nav navbar-nav nav-md inline text-primary-hover" data-ui-nav>
+            <li class="nav-item">
+              <a href="home.html" class="nav-link">
+                <span class="nav-text">Discover</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="browse.html" class="nav-link">
+                <span class="nav-text">Browse</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown pos-stc">
+              <a href="chart.html" class="nav-link">
+                <span class="nav-text">Charts</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="artist.html" class="nav-link">
+                <span class="nav-text">Artists</span>
+              </a>
+            </li>
+          </ul>
+          <!-- / link and dropdown -->
+        </div>
+        <!-- / navbar collapse -->
+  </div>

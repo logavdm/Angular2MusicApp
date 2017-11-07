@@ -1,0 +1,25 @@
+---
+layout: base.html
+---
+  <!-- content -->
+  <div id="content" class="app-content white bg" role="main">
+    <div class="app-header white lt box-shadow-z1">
+      {{>header}}
+    </div>
+    <div class="app-footer app-player grey bg">
+      {{>player}}
+    </div>
+    <div class="app-body" id="view">
+
+<!-- ############ PAGE START-->
+{{> body}}
+<!-- ############ PAGE END-->
+
+    </div>
+  </div>
+  <!-- / -->
+
+  {{>switcher folded="false"}}
+
+  {{>modal.search}}
+  {{>modal.share}}

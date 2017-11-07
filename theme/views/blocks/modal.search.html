@@ -1,0 +1,50 @@
+<!-- ############ SEARCH START -->
+  <div class="modal white lt fade" id="search-modal" data-backdrop="false">
+    <a data-dismiss="modal" class="text-muted text-lg p-x modal-close-btn">&times;</a>
+    <div class="row-col">
+      <div class="p-a-lg h-v row-cell v-m">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <form action="search.html" class="m-b-md">
+              <div class="input-group input-group-lg">
+                <input type="text" class="form-control" placeholder="Type keyword" data-ui-toggle-class="hide" data-ui-target="#search-result">
+                <span class="input-group-btn">
+                  <button class="btn b-a no-shadow white" type="submit">Search</button>
+                </span>
+              </div>
+            </form>
+            <div id="search-result" class="animated fadeIn">
+              <p class="m-b-md"><strong>23</strong> <span class="text-muted">Results found for: </span><strong>Keyword</strong></p>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="row item-list item-list-sm item-list-by m-b">
+                    {{>items col="col-xs-12" count="4" meta="true" overlay="false"}}
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="row item-list item-list-sm item-list-by m-b">
+                    {{>items.author col="col-xs-12" count="4" meta="true"}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="top-search" class="btn-groups">
+              <strong class="text-muted">Top searches: </strong>
+              <a href="#" class="btn btn-xs white">Happy</a> 
+              <a href="#" class="btn btn-xs white">Music</a> 
+              <a href="#" class="btn btn-xs white">Weekend</a> 
+              <a href="#" class="btn btn-xs white">Summer</a> 
+              <a href="#" class="btn btn-xs white">Holiday</a> 
+              <a href="#" class="btn btn-xs white">Blue</a> 
+              <a href="#" class="btn btn-xs white">Soul</a> 
+              <a href="#" class="btn btn-xs white">Calm</a> 
+              <a href="#" class="btn btn-xs white">Nice</a> 
+              <a href="#" class="btn btn-xs white">Home</a> 
+              <a href="#" class="btn btn-xs white">SLeep</a> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ############ SEARCH END -->

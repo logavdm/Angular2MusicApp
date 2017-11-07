@@ -1,0 +1,26 @@
+---
+layout: layout.c.html
+---
+        <div class="page-title m-b">
+          <h1 class="inline m-a-0">Charts</h1>
+          <div class="dropdown inline">
+            <button class="btn btn-sm no-bg h4 m-y-0 v-b dropdown-toggle text-primary" data-toggle="dropdown">Last week</button>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item active">
+                Last week
+              </a>
+              <a href="#" class="dropdown-item">
+                Last month
+              </a>
+              <a href="#" class="dropdown-item">
+                Last year
+              </a>
+              <a href="#" class="dropdown-item">
+                All the time
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row item-list item-list-md item-list-li m-b">
+          {{>items col="col-xs-12" count="10" meta="true" meta-stats="true" meta-stats-right="true"}}
+        </div>
