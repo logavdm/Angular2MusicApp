@@ -1526,7 +1526,7 @@ a.list-group-item {
     .ui-check > span .active {
       display: none; }
   .ui-check.ui-check-color input:checked + i:before {
-    background-color: #fff; }
+    background-color: black; }
 
 .ui-check-md input:checked + i:before {
   left: 6px;

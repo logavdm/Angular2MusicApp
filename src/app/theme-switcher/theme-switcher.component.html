@@ -1,0 +1,46 @@
+<!-- ############ SWITHCHER START-->
+    <div id="switcher">
+      <div class="switcher white" id="sw-theme" [ngClass]="{'active':AppStyle.themeswitchToggle}">
+        <a href="#" class="white sw-btn" (click)="ToggleThemeSwitcher()">
+          <i class="fa fa-gear text-muted"></i>
+        </a>
+        <div class="box-header">
+          <strong>Theme Switcher</strong>
+        </div>
+        <div class="box-divider"></div>
+        <div class="box-body">
+          <p id="settingLayout" class="hidden-md-down">
+            <label class="m-y-xs pointer" data-ui-fullscreen data-target="fullscreen">
+              <span class="fa fa-expand fa-fw m-r-xs"></span>
+              <span>Fullscreen Mode</span>
+            </label>
+          </p>
+
+          <p>Side Bar color:</p>
+          <p data-target="color">
+            <label class="radio radio-inline m-a-0 ui-check ui-check-color ui-check-md" *ngFor="let color of Colors">
+              <input type="radio" name="scolor" value="{{color}}" [(ngModel)]="SideBarColor">
+              <i class="{{color}}"></i>
+            </label>           
+          </p>
+
+          <p>Player Background color:</p>
+          <p data-target="color">
+            <label class="radio radio-inline m-a-0 ui-check ui-check-color ui-check-md" *ngFor="let color of Colors">
+              <input type="radio" name="Playercolor" value="{{color}}" [(ngModel)]="PlayerColor" >
+              <i class="{{color}}"></i>
+            </label>   
+          </p>
+          <p>Themes:</p>
+          <div data-target="bg" class="text-u-c text-center _600 clearfix">
+            <div *ngFor="let color of BodyColors">
+              <label class="p-a col-xs-3 {{color}} pointer m-a-0" >
+                <input type="radio" name="theme" value="{{color}}" hidden [(ngModel)]="BodyColor">
+                <i class="active-checked fa fa-check"></i>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- ############ SWITHCHER END-->

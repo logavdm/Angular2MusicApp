@@ -1,11 +1,16 @@
 import { Component ,OnInit,HostListener} from '@angular/core';
-import {AppState} from './appstate/app-state';
-import {DeviceInformation} from './appstate/models/device-information';
+
+
 import { NgRedux, select, DevToolsExtension } from '@angular-redux/store';
 import { rootReducer } from './store/store';
 import {INITIAL_STATE} from './app-config/initail-data-config';
 import { Observable } from 'rxjs/Observable';
 import { ResponsiveState } from 'ng2-responsive';
+
+//AppState
+import {AppState} from './appstate/app-state';
+import {DeviceInformation} from './appstate/models/device-information';
+import {AppTheme} from './appstate/models/app-theme';
 
 //actions
 import {Actions} from './actions/actions';
@@ -23,7 +28,10 @@ export class AppComponent implements OnInit {
 
 	@select() readonly sideMenuToggle:Observable<boolean>;
 	@select() readonly deviceInfo:Observable<DeviceInformation>;
+	@select() readonly appTheme:Observable<AppTheme>;
 	toggle:boolean;
+	AppStyleConfig:AppTheme;
+	color:string;
   
 
 constructor(private logger: NGXLogger,private ngRedux: NgRedux<AppState>,private devTools: DevToolsExtension,private responsive:ResponsiveState){
@@ -41,8 +49,15 @@ constructor(private logger: NGXLogger,private ngRedux: NgRedux<AppState>,private
 	ngOnInit(){
 		this.sideMenuToggle.subscribe(data=>{
 			this.toggle=data;
-			this.logger.debug('Side menu toggle initial state will be subscribed');
+			this.logger.debug('Side menu toggle initial state will be subscribed:'+JSON.stringify(this.toggle));
 		});
+
+		this.appTheme.subscribe(data=>{
+			this.AppStyleConfig=data;
+			this.logger.debug('Application style initial state will be subscribed as:'+JSON.stringify(this.AppStyleConfig));
+		});
+		
+		this.color="red";
 	}
 
 	

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgReduxModule }  from '@angular-redux/store';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ResponsiveModule } from 'ng2-responsive'
 import { Routes, RouterModule } from '@angular/router'; 
 
@@ -26,6 +27,7 @@ import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 
 //environment
 import {environment} from '../environments/environment';
+import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
 
 
 const routes: Routes = [  
@@ -61,11 +63,13 @@ const routes: Routes = [
     ArtistComponent,
     ArtistListComponent,
     TopArtistComponent,
+    ThemeSwitcherComponent,
 
   ],
   imports: [
     BrowserModule,
     NgReduxModule,
+    FormsModule,
     ResponsiveModule,
     RouterModule.forRoot(routes),
     LoggerModule.forRoot(environment.logger)

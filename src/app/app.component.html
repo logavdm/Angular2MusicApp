@@ -2,9 +2,9 @@
 
    <!-- ############ LAYOUT START-->
    <!-- aside -->
-   <div id="aside" [ngClass]="{'app-aside':true,'modal':true,'fade':true,'nav-dropdown':true,'folded':toggle}"  >
+   <div id="aside" [ngClass]="{'app-aside':true,'modal':true,'fade':true,'nav-dropdown':true,'folded':toggle}">
       <!-- fluid app aside -->
-      <div class="left navside blue dk" data-layout="column">
+      <div  data-layout="column" class="{{AppStyleConfig.sideBarColor}} left navside dk">
          <div class="navbar no-radius">
             <!-- brand -->
             <a href="/search" class="navbar-brand md">
@@ -84,14 +84,14 @@
    </div>
    <!-- / -->
    <!-- content -->
-   <div id="content" class="app-content white bg box-shadow-z2" role="main">
-      <div class="app-header white lt box-shadow-z1">
+    <div id="content" class="app-content {{AppStyleConfig.bodyBackgroundColor}} bg box-shadow-z2" role="main">
+       <div class="app-header lt box-shadow-z1 " [ngStyle]="{'background-color': 'white','color':'black'}" style="">
          <app-topmenu></app-topmenu>
       </div>
-      <app-player></app-player>
+      
       <div class="app-body" id="view">
          <!-- ############ PAGE START-->
-         <div class="page-content">
+         <div class="page-content {{AppStyleConfig.bodyBackgroundColor}}">
             
            <router-outlet></router-outlet>
             
@@ -99,6 +99,13 @@
          <!-- ############ PAGE END-->
       </div>
    </div>
-   <!-- / -->
+   <!-- /content end -->
+   <div class="app-footer app-player {{AppStyleConfig.PlayerBarColor}} bg">
+      <div class="playlist" style="width:100%"></div>
+      <app-player></app-player> 
+    </div>
+
+     <app-theme-switcher></app-theme-switcher>
+   
    <!-- ############ LAYOUT END-->
 </div>
