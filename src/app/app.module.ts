@@ -29,6 +29,9 @@ import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import {environment} from '../environments/environment';
 import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
 
+//player
+import {Angular2AudioComponentModule} from 'angular2-audio-component';
+
 
 const routes: Routes = [  
   { path: '', component:HomeComponent },
@@ -72,7 +75,9 @@ const routes: Routes = [
     FormsModule,
     ResponsiveModule,
     RouterModule.forRoot(routes),
-    LoggerModule.forRoot(environment.logger)
+    LoggerModule.forRoot(environment.logger),
+   
+    Angular2AudioComponentModule
   ],
   providers: [],
   bootstrap: [AppComponent]

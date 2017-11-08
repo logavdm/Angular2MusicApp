@@ -7,7 +7,7 @@ export interface InitailDataConfig {
 
 const initDeviceInfo:DeviceInformation=null;
 const initAppTheme:AppTheme={
-	themeswitchToggle:true,
+	themeswitchToggle:false,
 	PlayerBarColor:"grey",
 	bodyBackgroundColor:"black",
 	sideBarColor:"primary"

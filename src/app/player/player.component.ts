@@ -7,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
 
-  constructor() { }
+	sources: Array<Object>;
+
+  constructor() { 
+
+  this.sources = [
+            {
+                src: "http://static.videogular.com/assets/audios/videogular.mp3",
+                type: "audio/mp3"
+            }
+        ];
+
+    }
 
   ngOnInit() {
   }
