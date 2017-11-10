@@ -1,32 +1,66 @@
-<div class="playlist mep-tracks-count-3 has-artwork is-tracklist-closed" style="width:100%"><span class="mejs-offscreen">Audio Player</span>
+<div class="playlist mep-tracks-count-3 has-artwork is-tracklist-closed " style="width:100%"><span class="mejs-offscreen">Audio Player</span>
   <div id="mep_0" class="mejs-container mejs-audio" tabindex="0" role="application" aria-label="Audio Player" style="width: 100%; height: 40px;">
     <div class="mejs-inner">
       <div class="mejs-mediaelement">
-        <audio src=""></audio>
+        <audio #audioplayer src='{{src}}' volume='{{volume}}' ></audio>
       </div>
       <div class="mejs-layers">
         
-        <div class="mejs-track-actions">
-          <button class="mejs-like-button btn btn-sm no-bg btn-icon" track-id="item-1"></button>
-        </div><a class="mejs-track-artwork" href="track.detail.html" style="background-image: url('http://flatfull.com/themes/pulse/images/b0.jpg');"></a>
+        <a class="mejs-track-artwork" href="track.detail.html" style="background-image: url('http://flatfull.com/themes/pulse/images/b0.jpg');"></a>
         <div class="mejs-track-details"><span class="mejs-track-title"><a href="track.detail.html">Pull Up</a></span><span class="mejs-track-author"><a href="artist.detail.html">Summerella</a></span></div>
-       
        
       </div>
       <div class="mejs-controls">
-        <div class="mejs-button mejs-previous-button mejs-previous">
-          <button type="button" aria-controls="mep_0" title="Previous Track"></button>
+        <div class="mejs-button mejs-previous-button mejs-previous" [ngStyle]="{'opacity': '0.50'}">
+          <button type="button" title="Previous Track" ></button>
         </div>
-        <div class="mejs-button mejs-playpause-button mejs-play">
-          <button type="button" aria-controls="mep_0" title="Play" aria-label="Play"></button>
+        <div [ngClass]="{'mejs-button':true,'mejs-playpause-button':true,'mejs-pause':PlayerState.isPlaying?true:false,'mejs-play':PlayerState.isPlaying?false:true}">
+            <button type="button" title="Play" (click)="PlayerPlayButtonToggle()"></button>
         </div>
-        <div class="mejs-button mejs-next-button mejs-next">
-          <button type="button" aria-controls="mep_0" title="Next Track"></button>
+
+        <div class="mejs-button mejs-next-button mejs-next" [ngStyle]="{'opacity': '0.50'}">
+          <button type="button" title="Next Track"></button>
         </div>
-       
-        <div class="mejs-time" role="timer" aria-live="off"><span class="mejs-currenttime">00:00</span><span class="mejs-time-separator"> / </span><span class="mejs-duration">00:00</span></div>
-        <div class="mejs-button mejs-volume-button mejs-mute">
-          <button type="button" aria-controls="mep_0" title="Mute" aria-label="Mute"></button></div>
+
+        <!--Play buffered-->
+       <div class="mejs-time-rail" style="width: 100%;">
+          <span class="mejs-time-total mejs-time-slider" style="width: 100%;" >
+            <span class="mejs-time-current" style="width: 50%;"></span>
+          </span>
+      </div>
+      <!--Play buffered end-->
+        <div class="mejs-time"><span class="mejs-currenttime">00:00</span><span class="mejs-time-separator"> / </span><span class="mejs-duration">00:00</span></div>
+
+        <!--Volume Slider-->
+
+        <div class="mejs-button mejs-volume-button mejs-mute" >
+          
+          <div (mouseover)='over()' (mouseleave)='leave()'>
+              <button type="button" aria-controls="mep_0" title="Mute" aria-label="Mute" (click)="muteButtonClick()"></button>
+              
+              <a class="mejs-volume-slider" [ngStyle]="{'display':VolumeSlider?'block':'none'}">
+                <div ngD3Slider  id="slider1"
+                [vertical]="'true'" 
+                [direction]="'RTL'" 
+                [lineWidth]="3" 
+                [thumbColor]="'red'" 
+                [thumbSize]="6"  
+                [emptyColor]="'rgba(120, 120, 120, 0.1)'" 
+                [initialValue]="initVolume"  
+                [length]="90" 
+                [maxValue]="100"
+                [step]="1" 
+                [minValue]="10" 
+                style="margin-left:-5px;height:50%;" 
+                (selectedValue)="selectedValue($event)"></div>
+                              
+              </a>
+          </div>
+        </div>
+
+
+        <!--Volume Slider end-->
+
         <div class="mejs-button mejs-repeat-button mejs-repeat">
           <button type="button" aria-controls="mep_0" title="Repeat"></button>
         </div>

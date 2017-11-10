@@ -56,8 +56,8 @@ constructor(private logger: NGXLogger,private ngRedux: NgRedux<AppState>,private
 			this.AppStyleConfig=data;
 			this.logger.debug('Application style initial state will be subscribed as:'+JSON.stringify(this.AppStyleConfig));
 		});
+
 		
-		this.color="red";
 	}
 
 	

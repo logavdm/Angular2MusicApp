@@ -30,7 +30,9 @@ import {environment} from '../environments/environment';
 import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
 
 //player
-import {Angular2AudioComponentModule} from 'angular2-audio-component';
+
+//slider
+import {D3SliderDirective} from 'ng-d3-slider/d3-slider.directive'
 
 
 const routes: Routes = [  
@@ -67,6 +69,7 @@ const routes: Routes = [
     ArtistListComponent,
     TopArtistComponent,
     ThemeSwitcherComponent,
+    D3SliderDirective
 
   ],
   imports: [
@@ -75,9 +78,7 @@ const routes: Routes = [
     FormsModule,
     ResponsiveModule,
     RouterModule.forRoot(routes),
-    LoggerModule.forRoot(environment.logger),
-   
-    Angular2AudioComponentModule
+    LoggerModule.forRoot(environment.logger)
   ],
   providers: [],
   bootstrap: [AppComponent]

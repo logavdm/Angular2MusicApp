@@ -45,7 +45,7 @@ export class ThemeSwitcherComponent implements OnInit {
     this.PlayerColor=this.AppStyle.PlayerBarColor;
     this.BodyColor=this.AppStyle.bodyBackgroundColor;
 
-    this.logger.debug(BODY_COLORS);
+    this.logger.debug("Body Color get from Session is:"+JSON.stringify(BODY_COLORS));
 
 
   }
