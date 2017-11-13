@@ -7,7 +7,7 @@
       <div  data-layout="column" class="{{AppStyleConfig.sideBarColor}} left navside dk">
          <div class="navbar no-radius">
             <!-- brand -->
-            <a href="/search" class="navbar-brand md">
+            <a routerLink="/" routerLinkActive="active" class="navbar-brand md">
                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="32" height="32">
                   <circle cx="24" cy="24" r="24" fill="rgba(255,255,255,0.2)"/>
                   <circle cx="24" cy="24" r="22" fill="#1c202b" class="brand-color"/>
@@ -28,47 +28,17 @@
                      <span class="text-xs text-muted">Main</span>
                   </li>
                   <li>
-                     <a href="player.html">
+                     <a routerLink="/" routerLinkActive="active">
                      <span class="nav-icon">
                      <i class="material-icons">
-                     play_circle_outline
+                     home
                      </i>
                      </span>
-                     <span class="nav-text">Discover</span>
+                     <span class="nav-text">Home</span>
                      </a>
                   </li>
                   <li>
-                     <a href="browse.html">
-                     <span class="nav-icon">
-                     <i class="material-icons">
-                     sort
-                     </i>
-                     </span>
-                     <span class="nav-text">Browse</span>
-                     </a>
-                  </li>
-                  <li>
-                     <a href="chart.html">
-                     <span class="nav-icon">
-                     <i class="material-icons">
-                     trending_up
-                     </i>
-                     </span>
-                     <span class="nav-text">Charts</span>
-                     </a>
-                  </li>
-                  <li>
-                     <a href="artist.html">
-                     <span class="nav-icon">
-                     <i class="material-icons">
-                     portrait
-                     </i>
-                     </span>
-                     <span class="nav-text">Artist</span>
-                     </a>
-                  </li>
-                  <li>
-                     <a data-toggle="modal" data-target="#search-modal">
+                     <a routerLink="/search" routerLinkActive="active">
                      <span class="nav-icon">
                      <i class="material-icons">
                      search
@@ -77,6 +47,38 @@
                      <span class="nav-text">Search</span>
                      </a>
                   </li>
+                  <li>
+                     <a routerLink="/browse" routerLinkActive="active">
+                     <span class="nav-icon">
+                     <i class="material-icons">
+                     sort
+                     </i>
+                     </span>
+                     <span class="nav-text">browse</span>
+                     </a>
+                  </li>
+                   <li>
+                     <a routerLink="/artist" routerLinkActive="active">
+                     <span class="nav-icon">
+                     <i class="material-icons">
+                     account_box
+                     </i>
+                     </span>
+                     <span class="nav-text">Artist</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a routerLink="/**" routerLinkActive="active">
+                     <span class="nav-icon">
+                     <i class="material-icons">
+                     trending_up
+                     </i>
+                     </span>
+                     <span class="nav-text">Trending</span>
+                     </a>
+                  </li>
+                 
+                  
                </ul>
             </nav>
          </div>
