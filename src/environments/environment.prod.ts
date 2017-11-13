@@ -1,3 +1,10 @@
 export const environment = {
-  production: true
+  production: true,
+  logger:{
+
+  	serverLoggingUrl:'api/url',
+  	level:1,
+  	serverLogLevel:5
+
+  }
 };

@@ -15,24 +15,41 @@ const initAppTheme:AppTheme={
 	sideBarColor:"primary"
 };
 
-const initAudio:Audio={
-	artist:'AR Rahman',
-	title:'Mumbea Vaa',
-	source:'http://google.com',
+const initAudio1:Audio={
+	artist:'AR Rahman1',
+	title:'Mumbea Vaa1',
+	source:'assets/music/wave.mp3',
 	image:'http://google.png'
 }
 
-const initPlayList:Audio[]=[initAudio];
+const initAudio2:Audio={
+	artist:'AR Rahman1',
+	title:'Mumbea Vaa1',
+	source:'assets/music/wave.mp3',
+	image:'http://google.png'
+}
+
+const initAudio3:Audio={
+	artist:'AR Rahman1',
+	title:'Mumbea Vaa1',
+	source:'assets/music/wave.mp3',
+	image:'http://google.png'
+}
+
+const initPlayList:Audio[]=[initAudio1,initAudio2,initAudio3];
 
 const initPlayerState:PlayerState={
 	isAutoPlay:false,
-	Volume:50,
+	volume:0.5,
+	isMuted:false,
 	isPlaying:false,
 	isNextAvailable:false,
 	isPreviousAvailable:false,
 	PlayList:initPlayList,
+	isPlayListshow:false,
 	trackduration:null,
-	currentTime:null
+	currentTime:null,
+
 }
 
 export const COLORS=['primary','warn','light','black','success','info','blue','red','grey'];

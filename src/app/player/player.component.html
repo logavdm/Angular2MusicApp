@@ -2,10 +2,10 @@
   <div id="mep_0" class="mejs-container mejs-audio" tabindex="0" role="application" aria-label="Audio Player" style="width: 100%; height: 40px;">
     <div class="mejs-inner">
       <div class="mejs-mediaelement">
-        <audio #audioplayer src='{{src}}' volume='{{volume}}' ></audio>
+        <audio src='{{nowPlaying.source}}' volume='{{volume}}'></audio>
       </div>
       <div class="mejs-layers">
-        
+        <div class="mejs-track-actions"><button class="mejs-like-button btn btn-sm no-bg btn-icon" track-id="item-1"></button></div>
         <a class="mejs-track-artwork" href="track.detail.html" style="background-image: url('http://flatfull.com/themes/pulse/images/b0.jpg');"></a>
         <div class="mejs-track-details"><span class="mejs-track-title"><a href="track.detail.html">Pull Up</a></span><span class="mejs-track-author"><a href="artist.detail.html">Summerella</a></span></div>
        
@@ -33,10 +33,10 @@
 
         <!--Volume Slider-->
 
-        <div class="mejs-button mejs-volume-button mejs-mute" >
+        <div class="mejs-button mejs-volume-button"  [ngClass]="{'mejs-unmute':PlayerState.isMuted?true:false,'mejs-mute':PlayerState.isMuted?false:true}">
           
           <div (mouseover)='over()' (mouseleave)='leave()'>
-              <button type="button" aria-controls="mep_0" title="Mute" aria-label="Mute" (click)="muteButtonClick()"></button>
+              <button type="button" aria-controls="mep_0" title="Mute" aria-label="Mute" (click)="MuteToggle()"></button>
               
               <a class="mejs-volume-slider" [ngStyle]="{'display':VolumeSlider?'block':'none'}">
                 <div ngD3Slider  id="slider1"
@@ -68,25 +68,18 @@
           <button type="button" aria-controls="mep_0" title="Shuffle"></button>
         </div>
         <div class="mejs-button mejs-toggle-playlist-button mejs-toggle-playlist is-closed">
-          <button type="button" aria-controls="mep_0" title="Toggle Playlist"></button>
+          <button type="button" aria-controls="mep_0" title="Toggle Playlist" (click)="PlayListToggle()"></button>
         </div>
       </div>
       <div class="mejs-clear"></div>
     </div>
   </div>
+
   <!--Play List start Here-->
-  <ol class="tracks">
-    <li class="track">
+  <ol class="tracks" [ngStyle]="{'display':PlayerState.isPlayListshow?'block':'none'}" >
+    <li class="track black" *ngFor="let audio of PlayerState.PlayList">
       <div class="track-action"><a class="track-remove">×</a></div>
-      <div class="track-info"><span class="track-title">Pull Up</span><span class="track-author">Summerella</span></div>
-    </li>
-    <li class="track">
-      <div class="track-action"><a class="track-remove">×</a></div>
-      <div class="track-info"><span class="track-title">Fireworks</span><span class="track-author">Kygo</span></div>
-    </li>
-    <li class="track">
-      <div class="track-action"><a class="track-remove">×</a></div>
-      <div class="track-info"><span class="track-title">I Wanna Be In the Cavalry</span><span class="track-author">Jeremy Scott</span></div>
+      <div class="track-info"><span class="track-title">{{audio.title}}</span><span class="track-author">{{audio.artist}}</span></div>
     </li>
   </ol>
   <!--Play List start Here-->

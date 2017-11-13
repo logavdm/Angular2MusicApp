@@ -14,6 +14,9 @@ import {Actions} from '../actions/actions';
 import {ScreenSizeChange} from '../actions/action-interfaces/screen/screen-size-change';
 import {ThemeSwitcherToggle} from '../actions/action-interfaces/theme-switcher-toggle';
 import {PlayerplayPauseToggle} from '../actions/action-interfaces/player/playerplay-pause-toggle';
+import {PlaylistToggle} from '../actions/action-interfaces/player/playlist-toggle';
+import {MuteToggle} from '../actions/action-interfaces/player/mute-toggle';
+
 
 
 export interface Store {
@@ -58,6 +61,25 @@ export function rootReducer(state: AppState, action: Action): AppState {
             appTheme:state.appTheme,
             playerState:PlayerPlayPauseToggleVariable
         };
+
+        case Actions.PLAYLISTTOGGLE: 
+          let PlayerPlayListToggleVariable=state.playerState;
+           PlayerPlayListToggleVariable.isPlayListshow=PlayerPlayListToggleVariable.isPlayListshow?false:true;
+         return { 
+            sideMenuToggle:state.sideMenuToggle,
+            deviceInfo:ScreenSizeChangedVariable,
+            appTheme:state.appTheme,
+            playerState:PlayerPlayListToggleVariable
+          };
+        case Actions.PLAYERMUTETOGGLE: 
+         let PlayerMuteToggleVariable=state.playerState;
+         PlayerMuteToggleVariable.isMuted=PlayerMuteToggleVariable.isMuted?false:true;
+          return { 
+            sideMenuToggle:state.sideMenuToggle,
+            deviceInfo:ScreenSizeChangedVariable,
+            appTheme:state.appTheme,
+            playerState:PlayerMuteToggleVariable
+          };
 
     default: return state;
   }
