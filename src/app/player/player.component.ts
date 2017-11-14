@@ -1,4 +1,4 @@
-import { Component,ElementRef, OnInit,ViewChild, AfterViewInit,EventEmitter,Input} from '@angular/core';
+import { Component,ElementRef, OnInit,ViewChild, AfterViewInit,EventEmitter,Input,Output,Pipe} from '@angular/core';
 import { NgRedux, select } from '@angular-redux/store';
 import { Observable } from 'rxjs/Observable';
 
@@ -16,7 +16,7 @@ import {MuteToggle} from '../actions/action-interfaces/player/mute-toggle';
 //logger
 import { NGXLogger } from 'ngx-logger';
 
-//directive
+//volume slider
 import {D3SliderDirective} from 'ng-d3-slider/d3-slider.directive'
 
 @Component({
@@ -28,19 +28,24 @@ export class PlayerComponent implements OnInit {
 
 @select() readonly playerPlayPauseToggle:Observable<boolean>;
 @select() readonly playerState:Observable<PlayerState>;
+@Output() playerEvent: EventEmitter<any> = new EventEmitter();
+@Output() playerControlEvent: EventEmitter<any> = new EventEmitter();
+
 PlayerState:PlayerState;
 PlayList:Audio[];
-nowPlaying:Audio={artist:'',title:'',source:'',image:''};
-
-
+nowPlaying:Audio;
+isNextAvailable:boolean=false;
+isPreviousAvailable:boolean=false;
 
 elem: HTMLElement;
 audioElem: any;
 
-volume:number=0.5;
+volume:number;
 VolumeSlider:boolean;
-initVolume:number=50;
-src:string;
+sliderVolume:number;
+duration:string="00.00";
+index:number=0;
+
 
 
   constructor(private logger: NGXLogger,private ngRedux: NgRedux<AppState>,elem: ElementRef) { 
@@ -52,16 +57,25 @@ src:string;
 
       this.playerState.subscribe(data=>{
         this.PlayerState=data;
-        this.logger.log("Playe state Subscribe success");
+        this.PlayList=this.PlayerState.PlayList;
+        this.volume=this.PlayerState.volume;
+        this.sliderVolume=this.volume*100;
       });
 
       this.audioElem = this.elem.querySelector('audio');
+
+      if(this.PlayerState.PlayList.length){
+        this.nowPlaying=this.PlayerState.PlayList[0];
+        this.audioElem.src=this.nowPlaying.source;
+         this.checkNextTrackAvailable();
+      }
+
       this.audioElem.addEventListener('loadstart',()=>this.AudioElementLoadStart());
       this.audioElem.addEventListener('loadedmetadata',()=>this.logger.debug("Loaded meta data"));
       this.audioElem.addEventListener('finishedLoading',()=>this.logger.debug("Finish Loading:"));
       this.audioElem.addEventListener('progress',()=>this.logger.debug("Progress event start"));
       this.audioElem.addEventListener('loadeddata',()=>this.logger.debug("Loaded data"));
-      this.audioElem.addEventListener('canplay',()=>this.logger.debug("Audio Can play"));
+      this.audioElem.addEventListener('canplay',()=>this.AudioCanPlay());
       this.audioElem.addEventListener('playing',()=>this.logger.debug("Audio will playing"));
       this.audioElem.addEventListener('waiting',()=>this.logger.debug("Audio will  waiting for play"));      
       this.audioElem.addEventListener('volumechange',()=>this.logger.debug("Audio Volumn changed"));     
@@ -70,19 +84,13 @@ src:string;
   }
 
   AudioElementLoadStart(){
-     if(this.PlayerState.PlayList.length){
-       this.nowPlaying=this.PlayerState.PlayList[0];
-       this.src=this.nowPlaying.source;
-       this.logger.debug("initial audio will be set as source audio:"+this.PlayerState.PlayList[0]);
-     }else{
-       this.logger.debug("Initial audio list is empty");
-     }
+      this.logger.debug("Audio Source Loading Start");
   }
 
-
-
-  emitCurrentTrack(): void {
-    this.logger.debug(this.audioElem.nativeElement);
+  AudioCanPlay(){
+    this.logger.debug("Audio Can Play");
+    this.duration=this.audioElem.duration.toString();
+    this.logger.debug("Audio Duration Get Success:"+this.duration);
   }
 
 
@@ -94,6 +102,32 @@ src:string;
     }else{
        this.audioElem.pause();
     }
+  }
+
+  PlayerNextButtonClick(){
+     this.index=this.PlayerState.PlayList.indexOf(this.nowPlaying)+1;
+    if(this.index<this.PlayerState.PlayList.length){
+      if(this.PlayerState.isPlaying)
+      this.ngRedux.dispatch({type:'PLAYPAUSETOGGLE'} as PlayerplayPauseToggle);  
+      this.audioElem.src=this.PlayerState.PlayList[this.index].source;
+      this.nowPlaying=this.PlayerState.PlayList[this.index];
+    }else{
+      this.logger.debug("Next Song Not Available on the PlayList");
+    }
+    this.checkNextTrackAvailable();
+  }
+
+   PlayerPreviousButtonClick(){
+     this.index=this.PlayerState.PlayList.indexOf(this.nowPlaying)-1;
+    if(this.index>=0){
+      if(this.PlayerState.isPlaying)
+      this.ngRedux.dispatch({type:'PLAYPAUSETOGGLE'} as PlayerplayPauseToggle);  
+      this.audioElem.src=this.PlayerState.PlayList[this.index].source;
+      this.nowPlaying=this.PlayerState.PlayList[this.index];
+    }else{
+      this.logger.debug("Previous Song Not Available on the PlayList");
+    }
+    this.checkPreviousTrackAvailable();
   }
 
  over(){
@@ -117,5 +151,30 @@ src:string;
     this.audioElem.muted=this.PlayerState.isMuted?true:false;  
     this.logger.debug("Mute Button toggle Action Performed");
   }
+
+  checkNextTrackAvailable(){
+    if((this.PlayerState.PlayList.length-1)>this.PlayList.indexOf(this.nowPlaying)){
+          this.isNextAvailable=true;
+     }else{ 
+        this.isNextAvailable=false;
+      }
+      this.checkPreviousTrackAvailable();
+  }
+
+  checkPreviousTrackAvailable(){
+    if(this.PlayList.indexOf(this.nowPlaying)==0){
+          this.isPreviousAvailable=false;
+     }else{ 
+        this.isPreviousAvailable=true;
+     }
+
+     if((this.PlayerState.PlayList.length-1)>this.PlayList.indexOf(this.nowPlaying)){
+          this.isNextAvailable=true;
+     }else{ 
+        this.isNextAvailable=false;
+      }
+  }
+
+
 
 }

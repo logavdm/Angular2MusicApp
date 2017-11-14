@@ -2,24 +2,24 @@
   <div id="mep_0" class="mejs-container mejs-audio" tabindex="0" role="application" aria-label="Audio Player" style="width: 100%; height: 40px;">
     <div class="mejs-inner">
       <div class="mejs-mediaelement">
-        <audio src='{{nowPlaying.source}}' volume='{{volume}}'></audio>
+        <audio volume='{{volume}}' ></audio>
       </div>
       <div class="mejs-layers">
         <div class="mejs-track-actions"><button class="mejs-like-button btn btn-sm no-bg btn-icon" track-id="item-1"></button></div>
-        <a class="mejs-track-artwork" href="track.detail.html" style="background-image: url('http://flatfull.com/themes/pulse/images/b0.jpg');"></a>
-        <div class="mejs-track-details"><span class="mejs-track-title"><a href="track.detail.html">Pull Up</a></span><span class="mejs-track-author"><a href="artist.detail.html">Summerella</a></span></div>
+        <a class="mejs-track-artwork" href="track.detail.html" [ngStyle]="{'background-image': 'url(' + nowPlaying.image + ')'}"></a>
+        <div class="mejs-track-details"><span class="mejs-track-title"><a href="track.detail.html">{{nowPlaying.title}}</a></span><span class="mejs-track-author"><a href="artist.detail.html">{{nowPlaying.artist}}</a></span></div>
        
       </div>
       <div class="mejs-controls">
-        <div class="mejs-button mejs-previous-button mejs-previous" [ngStyle]="{'opacity': '0.50'}">
-          <button type="button" title="Previous Track" ></button>
+        <div class="mejs-button mejs-previous-button mejs-previous" [ngStyle]="{'opacity': isPreviousAvailable?'1':'0.50'}">
+          <button type="button" title="Previous Track" (click)="PlayerPreviousButtonClick()" [disabled]="!isPreviousAvailable"></button>
         </div>
         <div [ngClass]="{'mejs-button':true,'mejs-playpause-button':true,'mejs-pause':PlayerState.isPlaying?true:false,'mejs-play':PlayerState.isPlaying?false:true}">
             <button type="button" title="Play" (click)="PlayerPlayButtonToggle()"></button>
         </div>
 
-        <div class="mejs-button mejs-next-button mejs-next" [ngStyle]="{'opacity': '0.50'}">
-          <button type="button" title="Next Track"></button>
+        <div class="mejs-button mejs-next-button mejs-next" [ngStyle]="{'opacity': isNextAvailable?'1':'0.50'}">
+          <button type="button" title="Next Track" (click)="PlayerNextButtonClick()" [disabled]="!isNextAvailable"></button>
         </div>
 
         <!--Play buffered-->
@@ -29,7 +29,7 @@
           </span>
       </div>
       <!--Play buffered end-->
-        <div class="mejs-time"><span class="mejs-currenttime">00:00</span><span class="mejs-time-separator"> / </span><span class="mejs-duration">00:00</span></div>
+        <div class="mejs-time"><span class="mejs-currenttime">00:00</span><span class="mejs-time-separator"> / </span><span class="mejs-duration"> {{duration | slice:0:5}}</span></div>
 
         <!--Volume Slider-->
 
@@ -46,7 +46,7 @@
                 [thumbColor]="'red'" 
                 [thumbSize]="6"  
                 [emptyColor]="'rgba(120, 120, 120, 0.1)'" 
-                [initialValue]="initVolume"  
+                [initialValue]="sliderVolume"  
                 [length]="90" 
                 [maxValue]="100"
                 [step]="1" 

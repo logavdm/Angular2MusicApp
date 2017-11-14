@@ -16,31 +16,31 @@ const initAppTheme:AppTheme={
 };
 
 const initAudio1:Audio={
-	artist:'AR Rahman1',
-	title:'Mumbea Vaa1',
-	source:'assets/music/wave.mp3',
-	image:'http://google.png'
+	artist:'AR Rahman',
+	title:'Kaattu Sirukki',
+	source:'http://www.friendstamilmp3.com/songs2/A%20R%20Rahman%20Hits/Raavanan/Kaattu%20Sirukki.mp3',
+	image:'http://logavdm.me/StarMusiq/images/songs/Jodhaa-Akbar_B.jpg'
 }
 
 const initAudio2:Audio={
-	artist:'AR Rahman1',
-	title:'Mumbea Vaa1',
-	source:'assets/music/wave.mp3',
-	image:'http://google.png'
+	artist:'AR Rahman2',
+	title:'Alle Alle',
+	source:'http://www.friendstamilmp3.com/songs2/A%20R%20Rahman%20Hits/Boys/Ale%20Ale.mp3',
+	image:'http://logavdm.me/StarMusiq/images/songs/Kadhalil-Vizhunthen_B.jpg'
 }
 
 const initAudio3:Audio={
-	artist:'AR Rahman1',
-	title:'Mumbea Vaa1',
-	source:'assets/music/wave.mp3',
-	image:'http://google.png'
+	artist:'AR Rahman3',
+	title:'Mumbea Vaa3',
+	source:'http://www.friendstamilmp3.com/songs2/A%20R%20Rahman%20Hits/Raavanan/Usure%20Pogudhey.mp3',
+	image:'http://logavdm.me/StarMusiq/images/songs/Kaalai_B.jpg'
 }
 
 const initPlayList:Audio[]=[initAudio1,initAudio2,initAudio3];
 
 const initPlayerState:PlayerState={
 	isAutoPlay:false,
-	volume:0.5,
+	volume:0.75,
 	isMuted:false,
 	isPlaying:false,
 	isNextAvailable:false,
@@ -56,7 +56,7 @@ export const COLORS=['primary','warn','light','black','success','info','blue','r
 export const BODY_COLORS=['light','grey','dark','black'];
 
 export const INITIAL_STATE: AppState = { 
-	sideMenuToggle:false,
+	sideMenuToggle:true,
 	deviceInfo:initDeviceInfo,
 	appTheme:initAppTheme,
 	playerState:initPlayerState

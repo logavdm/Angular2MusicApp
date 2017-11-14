@@ -35,6 +35,7 @@ import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.componen
 import {D3SliderDirective} from 'ng-d3-slider/d3-slider.directive'
 
 
+
 const routes: Routes = [  
   { path: '', component:HomeComponent },
   { path: 'search', component: SearchComponent },

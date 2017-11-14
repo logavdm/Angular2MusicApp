@@ -19,6 +19,8 @@ import {ScreenSizeChange} from './actions/action-interfaces/screen/screen-size-c
 //logger
 import { NGXLogger } from 'ngx-logger';
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -32,11 +34,13 @@ export class AppComponent implements OnInit {
 	toggle:boolean;
 	AppStyleConfig:AppTheme;
 	color:string;
-  
+
 
 constructor(private logger: NGXLogger,private ngRedux: NgRedux<AppState>,private devTools: DevToolsExtension,private responsive:ResponsiveState){
 
 	INITIAL_STATE.deviceInfo=this.GetDeviceInformation();
+
+
 
 	ngRedux.configureStore(
         rootReducer,
@@ -47,6 +51,7 @@ constructor(private logger: NGXLogger,private ngRedux: NgRedux<AppState>,private
 	}
 	
 	ngOnInit(){
+		
 		this.sideMenuToggle.subscribe(data=>{
 			this.toggle=data;
 			this.logger.debug('Side menu toggle initial state will be subscribed:'+JSON.stringify(this.toggle));
